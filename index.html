@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mitigate</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Ccircle cx=%2232%22 cy=%2232%22 r=%2231%22 fill=%22%2317402c%22/%3E%3Ccircle cx=%2232%22 cy=%2232%22 r=%2227%22 fill=%22none%22 stroke=%22%23f2b84b%22 stroke-width=%221.5%22/%3E%3Cpath d=%22M16 46C15 30 26 18 48 16 48 36 38 47 16 46Z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M18 44 38 24%22 stroke=%22%2317402c%22 stroke-width=%222.5%22 stroke-linecap=%22round%22 fill=%22none%22/%3E%3Ccircle cx=%2220%22 cy=%2217%22 r=%224.5%22 fill=%22%23f2b84b%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="logo" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" fill="#17402c"/><circle cx="32" cy="32" r="27" fill="none" stroke="#f2b84b" stroke-width="1.5"/><path d="M16 46C15 30 26 18 48 16 48 36 38 47 16 46Z" fill="#fff"/><path d="M18 44 38 24" stroke="#17402c" stroke-width="2.5" stroke-linecap="round" fill="none"/><circle cx="20" cy="17" r="4.5" fill="#f2b84b"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.9-.2 5 2 5 5.3"/></symbol>
+<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-6 4z"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+<symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 21v-6"/><path d="M12 15c-4 0-6-2.5-6-5 0-2 1.5-3 3-3 0-2.5 1.5-4 3-4s3 1.5 3 4c1.5 0 3 1 3 3 0 2.5-2 5-6 5z"/></symbol>
+<symbol id="i-wheat" viewBox="0 0 24 24"><path d="M12 21V8"/><path d="M12 8c-2-.5-3-2-3-4 2 .5 3 2 3 4zM12 8c2-.5 3-2 3-4-2 .5-3 2-3 4zM12 14c-2-.5-3-2-3-4 2 .5 3 2 3 4zM12 14c2-.5 3-2 3-4-2 .5-3 2-3 4z"/></symbol>
+<symbol id="i-car" viewBox="0 0 24 24"><path d="M3 17v-5l2.2-5h13.6L21 12v5z"/><path d="M3 12h18"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></symbol>
+<symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 21V11l6 4v-4l6 4V4h4v17z"/></symbol>
+<symbol id="i-coral" viewBox="0 0 24 24"><path d="M12 21v-8M12 13c-3 0-4-2-4-5M12 13c3 0 4-2 4-5M8 8V5M16 8V5"/></symbol>
+<symbol id="i-ice" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/></symbol>
+<symbol id="i-heat" viewBox="0 0 24 24"><path d="M10 14V5a2 2 0 014 0v9a4 4 0 11-4 0z"/></symbol>
+<symbol id="i-salad" viewBox="0 0 24 24"><path d="M3 12h18a9 9 0 01-18 0z"/><path d="M8 12c0-3 2-5 5-5 0 3-2 5-5 5z"/></symbol>
+<symbol id="i-bike" viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l4-8h5l3 8M10 8H8M13 16l-3-8"/></symbol>
+<symbol id="i-loop" viewBox="0 0 24 24"><path d="M20 12a8 8 0 01-14 5.3M4 12a8 8 0 0114-5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></symbol>
+<symbol id="i-mountain" viewBox="0 0 24 24"><path d="M2 20l7-12 4 7 3-4 6 9z"/></symbol>
+<symbol id="i-utensils" viewBox="0 0 24 24"><path d="M7 3v8M5 3v5a2 2 0 004 0V3M7 11v10M17 3c-2 2-3 5-3 8h3v10"/></symbol>
+<symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 3L3 10.5l7 2.5 2.5 7z"/><path d="M10 13L21 3"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/></symbol>
+</defs></svg>
+<header>
+  <h1 class="logo"><a href="#overview"><svg class="brandmark" width="40" height="40" aria-hidden="true"><use href="#logo"/></svg><span>Mitigate</span></a></h1>
+  <nav id="nav" aria-label="Main">
+    <a href="#overview">Start</a>
+    <a href="#causes">Causes</a>
+    <a href="#effects">Effects</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#footprint">My footprint</a>
+    <a href="#feedback">Feedback</a>
+  </nav>
+</header>
+
+<main>
+<!-- 1. Start -->
+<section id="overview">
+  <div class="hero">
+    <h2>The Earth is getting hotter. <mark>Let’s find out why.</mark></h2>
+    <p>When we burn coal, oil and gas, we put gases into the air that trap heat. That is climate change.</p>
+    <p>“Mitigate” means to make something less bad. Here you can learn what causes climate change, what it does, and what small things you can do to help.</p>
+    <a class="btn" href="#causes">Start learning</a>
+    <div class="stripes" id="stripes" aria-hidden="true"></div>
+  </div>
+  <p class="note">The coloured stripes are decorative, inspired by climate “warming stripes”. They are not real data.</p>
+  <div class="two">
+    <div class="card def"><b>mit·i·gate</b> <i>verb, /ˈmɪtɪɡeɪt/</i><p>To make something less bad. For climate, it means cutting the gases that heat up the Earth.</p><p class="note">Its partner word is “adapt”: getting ready for changes that are already coming.</p></div>
+    <div class="card fact"><h3><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg> Quick fact</h3><p id="fact"></p><button class="chip" id="nf" type="button">Next fact</button></div>
+  </div>
+  <p class="bubble">Climate change can feel far too big for one person. But it’s made of everyday choices, and so is the way out.</p>
+  <h3 class="asksh">The goal in three steps</h3>
+  <ol class="asks">
+    <li><b>Be ready.</b> Help people stay safe in floods, heatwaves and storms.</li>
+    <li><b>Make a plan.</b> Governments and schools set goals to cut pollution.</li>
+    <li><b>Learn and share.</b> When more people understand it, more people act.</li>
+  </ol>
+</section>
+
+<!-- 2. Causes -->
+<section id="causes" hidden>
+  <h2>What causes climate change?</h2>
+  <p class="lead">Click a cause to learn more.</p>
+  <div class="chips" id="chips"></div>
+  <div class="card" id="cd" aria-live="polite"></div>
+</section>
+
+<!-- 3. Effects -->
+<section id="effects" hidden>
+  <h2>Why every half degree matters</h2>
+  <p class="lead">Numbers can feel cold, so each one comes with what it could mean for people. Compare two levels of warming.</p>
+  <div class="chips" id="seg">
+    <button class="chip" aria-pressed="true" data-k="1.5">1.5°C</button>
+    <button class="chip" aria-pressed="false" data-k="2">2°C</button>
+  </div>
+  <div class="fx">
+    <div class="therm"><div class="fill"></div></div>
+    <div class="card"><div class="tv" id="tv">+1.5°C</div><div id="stats" aria-live="polite"></div></div>
+  </div>
+  <p class="note">Source: IPCC Special Report on Global Warming of 1.5°C (2018).</p>
+</section>
+
+<!-- 4. Solutions -->
+<section id="solutions" hidden>
+  <h2>What can we do?</h2>
+  <p class="lead">You don’t have to do everything. Pick what fits your life and tap “I’ll try this” on the ones you mean.</p>
+  <div class="chips" id="flt">
+    <button class="chip" aria-pressed="true" data-f="all">All</button>
+    <button class="chip" aria-pressed="false" data-f="you">You</button>
+    <button class="chip" aria-pressed="false" data-f="community">Community</button>
+    <button class="chip" aria-pressed="false" data-f="government">Government</button>
+  </div>
+  <div class="grid3" id="sol">
+    <div class="card" data-who="you"><h3><svg class="ic" aria-hidden="true"><use href="#i-salad"/></svg> Eat more plants</h3><p>Plant-rich meals usually have a smaller carbon footprint, and they can be delicious.</p><button class="pledge" aria-pressed="false">I’ll try this</button></div>
+    <div class="card" data-who="you"><div class="slot" data-p="5"></div><h3><svg class="ic" aria-hidden="true"><use href="#i-bike"/></svg> Move differently</h3><p>Walk, cycle or ride public transport for everyday trips, and enjoy the fresh air.</p><button class="pledge" aria-pressed="false">I’ll try this</button></div>
+    <div class="card" data-who="community"><h3><svg class="ic" aria-hidden="true"><use href="#i-tree"/></svg> Plant and protect</h3><p>Planting trees with neighbours cools streets and stores carbon.</p><button class="pledge" aria-pressed="false">I’ll try this</button></div>
+    <div class="card" data-who="community"><h3><svg class="ic" aria-hidden="true"><use href="#i-loop"/></svg> Repair and share</h3><p>Repair cafés and swap events keep things in use and bring people together.</p><button class="pledge" aria-pressed="false">I’ll try this</button></div>
+    <div class="card" data-who="government"><div class="slot" data-p="6"></div><h3><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg> Clean power</h3><p>Ask leaders to grow solar and wind power and to phase out coal.</p><button class="pledge" aria-pressed="false">I’ll ask for this</button></div>
+    <div class="card" data-who="government"><div class="slot" data-p="7"></div><h3><svg class="ic" aria-hidden="true"><use href="#i-mountain"/></svg> Protect wild places</h3><p>Forests and wetlands soak up carbon and shelter wildlife. They need protecting.</p><button class="pledge" aria-pressed="false">I’ll ask for this</button></div>
+  </div>
+  <p class="bubble" id="pl" aria-live="polite">Pick one small thing that fits your life.</p>
+</section>
+
+<!-- 5. Footprint calculator -->
+<section id="footprint" hidden>
+  <h2>Your carbon footprint</h2>
+  <p class="lead">Move the sliders to see how everyday habits add up. This is a rough guide, not an exact measurement.</p>
+  <div class="two">
+    <form class="card" id="calc" onsubmit="return false">
+      <label class="rng"><span><svg class="ic" aria-hidden="true"><use href="#i-car"/></svg> Car travel, km per week <output></output></span><input type="range" min="0" max="300" value="50" data-k="8.84"></label>
+      <label class="rng"><span><svg class="ic" aria-hidden="true"><use href="#i-utensils"/></svg> Meat meals per week <output></output></span><input type="range" min="0" max="21" value="7" data-k="130"></label>
+      <label class="rng"><span><svg class="ic" aria-hidden="true"><use href="#i-plane"/></svg> Return flights per year <output></output></span><input type="range" min="0" max="10" value="1" data-k="250"></label>
+      <label class="rng"><span><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg> Electricity, kWh per month <output></output></span><input type="range" min="0" max="800" step="10" value="250" data-k="6"></label>
+    </form>
+    <div class="card">
+      <div class="tot"><span id="tot">0</span> <small>tonnes CO₂ per year</small></div>
+      <div class="bar"><i></i><span class="mark" title="Global average"></span></div>
+      <p class="note">The dashed line marks the global average of about 4.7 tonnes per person across all sources, so treat this four-habit total as a guide.</p>
+      <p class="bubble" id="tip" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Feedback -->
+<section id="feedback" hidden>
+  <h2>Feedback</h2>
+  <p class="lead">Tell us what you liked and what we should improve.</p>
+  <div class="two">
+    <form class="card" id="fb" novalidate>
+      <label>Your name <input id="nm" maxlength="40" autocomplete="name"></label>
+      <label>Email (optional) <input id="em" type="email" autocomplete="email"></label>
+      <label>Favourite section
+        <select id="fv"><option>Causes</option><option>Effects</option><option>Solutions</option><option>My footprint</option></select>
+      </label>
+      <label id="rl">Rating</label>
+      <div class="stars" id="stars" role="radiogroup" aria-labelledby="rl"></div>
+      <label>Message <textarea id="ms" rows="4" maxlength="300"></textarea></label>
+      <small id="cnt">0 / 300</small>
+      <p id="er" role="alert"></p>
+      <button class="btn" type="submit">Send feedback</button>
+    </form>
+    <div class="card"><h3>Feedback so far</h3><p class="note">Saved in this browser only.</p><div id="fl"></div></div>
+  </div>
+</section>
+</main>
+
+<footer><svg class="brandmark" width="40" height="40" aria-hidden="true"><use href="#logo"/></svg><p><b>Mitigate</b><br>An educational project about UN Sustainable Development Goal 13.<br>Made with care for a world we all share.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
